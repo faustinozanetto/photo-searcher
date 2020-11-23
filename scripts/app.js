@@ -3,7 +3,7 @@ const searchInput = document.getElementsByClassName('search-input')[0];
 const section = document.getElementsByClassName('photo-grid')[0];
 
 /* Unsplash auth tokens and end point */
-const accessKey = 'YOUR ACCESS KEY';
+const accessKey = 'fedo17XgwoQszotR4A5rdu3qpQU--zxbffupy2h1FMA';
 const endPoint = 'https://api.unsplash.com/search/photos';
 
 /* Card types */
@@ -74,9 +74,7 @@ const populateWithData = async function () {
   if (searchInput.value) {
     const data = await fetchImages(searchInput.value);
     clearCards();
-    setTimeout(function () {
-      populateCards(data);
-    }, 50);
+    populateCards(data);
   } else {
     alert('Please enter a valid input!');
   }
