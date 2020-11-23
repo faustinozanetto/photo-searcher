@@ -5,6 +5,7 @@ body {
   color: #fff;
   font-family: 'Noto Sans', sans-serif;
   box-sizing: border-box;
+  transition: left 0.5s;
 }
 
 .container {
