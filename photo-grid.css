@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+  background: rgb(19, 19, 19);
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  background-color: #262626;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.title {
+  flex: 0.4;
+  text-align: left;
+  align-self: center;
+}
+
+.customization-container {
+  display: grid;
+  align-content: space-between;
+  margin-left: 35vw / 1.5;
+  flex: 0.6;
+  gap: 2rem;
+  grid-template-columns: 0.6fr 0.5fr;
+}
+
+.search-input {
+  background: #fff;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.5);
+  color: gray;
+  font-size: 1rem;
+  align-self: center;
+  height: 15px;
+  outline: none;
+  padding: 1rem;
+  padding-left: 3rem;
+  width: calc(100% - 4rem);
+  grid-row: 1 / 3;
+}
+
+.search-button {
+  background: #201aa2dd;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 900;
+  outline: none;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  align-self: center;
+  height: 50px;
+  grid-row: 1 / 3;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+  background: #fd7e14;
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: white;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  cursor: pointer;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.card-tall {
+  grid-row: span 2 / auto;
+}
+
+.card-wide {
+  grid-row: span 2 / auto;
+}
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-auto-rows: 450px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  clear: both;
+  position: relative;
+  height: 50px;
+  margin-top: auto;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: #262626;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .title {
+    flex: 0.3;
+    font-size: 1.5rem;
+  }
+
+  .customization-container {
+    flex: 0.7;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .search-input {
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    width: 150px;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 /1;
+    grid-row: 1 /1;
+  }
+
+  .search-button {
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    width: 150px;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 /1;
+    grid-row: 2 /2;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+  }
+}
